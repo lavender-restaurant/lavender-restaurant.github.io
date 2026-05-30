@@ -1,50 +1,115 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lavender Restaurant</title>
 
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f6f0ff;
-      font-family: Arial, sans-serif;
-      color: #4b2e83;
+    * {
+      box-sizing: border-box;
     }
 
-    .box {
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        linear-gradient(rgba(42, 25, 60, 0.65), rgba(42, 25, 60, 0.75)),
+        linear-gradient(135deg, #f4eaff, #d8c4f2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 430px;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 28px;
+      padding: 36px 28px;
       text-align: center;
-      animation: fadeIn 1.5s ease-in-out;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .logo {
+      width: 86px;
+      height: 86px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #6a3fa0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 
     h1 {
+      margin: 0;
       font-size: 32px;
-      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
-    p {
+    .subtitle {
+      margin: 10px 0 24px;
+      font-size: 16px;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+
+    .welcome {
       font-size: 18px;
+      margin-bottom: 26px;
+      line-height: 1.5;
+    }
+
+    .button {
+      display: inline-block;
+      width: 100%;
+      padding: 15px 20px;
+      background: #ffffff;
+      color: #5a2d82;
+      text-decoration: none;
+      border-radius: 16px;
+      font-size: 17px;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .small {
+      margin-top: 18px;
+      font-size: 13px;
+      opacity: 0.8;
     }
 
     .loader {
-      margin: 25px auto 0;
-      width: 40px;
-      height: 40px;
-      border: 4px solid #d8c7f0;
-      border-top: 4px solid #4b2e83;
+      margin: 24px auto 0;
+      width: 36px;
+      height: 36px;
+      border: 4px solid rgba(255, 255, 255, 0.35);
+      border-top: 4px solid #ffffff;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
 
-    @keyframes fadeIn {
+    @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px);
       }
       to {
         opacity: 1;
@@ -53,9 +118,6 @@
     }
 
     @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
       to {
         transform: rotate(360deg);
       }
@@ -63,17 +125,35 @@
   </style>
 
   <script>
-    setTimeout(function() {
+    setTimeout(function () {
       window.location.href = "lavender.pdf";
-    }, 2000);
+    }, 4000);
   </script>
 </head>
 
 <body>
-  <div class="box">
-    <h1>Willkommen bei Lavender Restaurant</h1>
-    <p>Unsere Speisekarte wird geöffnet...</p>
+  <main class="card">
+    <div class="logo">L</div>
+
+    <h1>Lavender Restaurant</h1>
+
+    <p class="subtitle">
+      Willkommen bei Lavender Restaurant
+    </p>
+
+    <p class="welcome">
+      Unsere Speisekarte wird gleich für Sie geöffnet.
+    </p>
+
+    <a class="button" href="Lavender.pdf">
+      Speisekarte öffnen
+    </a>
+
     <div class="loader"></div>
-  </div>
+
+    <p class="small">
+      Automatische Weiterleitung in wenigen Sekunden
+    </p>
+  </main>
 </body>
 </html>
