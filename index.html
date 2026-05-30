@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=Lavender.pdf">
-  <title>Lavender Speisekarte</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavender Restaurant</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f6f0ff;
+      font-family: Arial, sans-serif;
+      color: #4b2e83;
+    }
+
+    .box {
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .loader {
+      margin: 25px auto 0;
+      width: 40px;
+      height: 40px;
+      border: 4px solid #d8c7f0;
+      border-top: 4px solid #4b2e83;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <script>
+    setTimeout(function() {
+      window.location.href = "lavender.pdf";
+    }, 2000);
+  </script>
 </head>
+
 <body>
-  <p>Speisekarte wird geöffnet...</p>
+  <div class="box">
+    <h1>Willkommen bei Lavender Restaurant</h1>
+    <p>Unsere Speisekarte wird geöffnet...</p>
+    <div class="loader"></div>
+  </div>
 </body>
 </html>
